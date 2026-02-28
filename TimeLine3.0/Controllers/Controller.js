@@ -88,16 +88,24 @@ const Posthandler = (req, res) => {
     });
 
 };
-const Deletehandler= (req,res)=>{
-    console.log('Delete handler called');
-    console.log(req.params.id);
-    postmodels.findByIdAndDelete(req.params.id)
-    .then(()=>{
-        res.redirect('/timeline');
-    }).catch((err)=>{
-        console.log(err);
+const Deletehandler = (req, res) => {
+    const postId = req.params.id;
+    postmodels.findById(postId)
+    .then(post => {
+        if (!post) throw new Error('Post not found');
+        return commentmodels.deleteMany({ _id: { $in: post.comments } });
     })
-}
+    .then(() => {
+        return postmodels.findByIdAndDelete(postId);
+    })
+    .then(() => {
+        res.redirect('/timeline');
+    })
+    .catch(err => {
+        console.log(err);
+        res.redirect('/timeline?error=' + encodeURIComponent(err.message));
+    });
+};
 const Updatehandler = (req, res) => {
     postmodels.findById(req.params.id)
     .then(postinfo => {
@@ -219,4 +227,5 @@ module.exports={
     editedPosthandler,
     Commenthandler,
     DeleteComhandler
+
 };
