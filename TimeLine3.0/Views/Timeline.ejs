@@ -64,7 +64,10 @@
                                 <p>
                                     <strong>
                                         <%= comment.user ? comment.user.name : 'Unknown' %>
-                                    </strong> :
+                                    </strong> - <small style="color: gray;">
+                                        (<%= new Date(comment.CreatedAt).toLocaleString() %>)
+                                    </small>:
+
                                     <%= comment.body %>
                                 </p>
 
@@ -79,5 +82,6 @@
                 <%});%>
 
 </body>
+
 
 </html>
