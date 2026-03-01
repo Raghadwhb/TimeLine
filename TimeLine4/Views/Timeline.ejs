@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Style.css">
+    <title>Homepage</title>
+</head>
+
+<body>
+    <h1>Timeline Page</h1>
+    <div class="line"></div>
+    <div class="enter-post">
+        <form action="/new-post" method="POST">
+            <input name="post" type="text" class="post-input" placeholder="Enter youtr post">
+            <input name="name" type="text" class="post-input" placeholder="Enter your name">
+            <input type="submit" class="postbtn" value="Post">
+        </form>
+    </div>
+
+    <% if (typeof error !=='undefined' ) { %>
+        <div class="error-msg">
+            <h3 style="color:red;">
+                <%= error %>
+            </h3>
+        </div>
+        <% } %>
+
+            <% post.forEach(function(element){ %>
+
+                <div class="post-container">
+                    <a href="/delete/post/<%=element._id%>"><button class="del"> delete</button></a>
+                    <a href="/update/post/<%=element._id%>"><button class="edt"> edit</button></a>
+                    <p class="name-date">
+                    <p class="name-date">
+                        <%= element.user ? element.user.name : 'Unknown' %> - <% const date=new Date(element.createdAt);
+                                const day=date.getDate(); const month=date.toLocaleString('default', { month: 'long' });
+                                const year=date.getFullYear(); function ordinalSuffix(d) { if(d> 3 && d < 21) return d
+                                    + 'th' ; switch (d % 10) { case 1: return d + "st" ; case 2: return d + "nd" ; case
+                                    3: return d + "rd" ; default: return d + "th" ; } } %>
+                                    <%= month %>
+                                        <%= ordinalSuffix(day) %>
+                                            <%= year %>
+                    </p>
+                    <div class="msg">
+                        <%=element.post%>
+                    </div>
+                </div>
+                <div class="commentform">
+                    <form action="/new-comment/<%=element._id%>" method="POST">
+                        <input name="body" type="text" class="comment-input" placeholder="Enter your comment">
+                        <input name="name" type="text" class="comment-input" placeholder="Enter your name">
+                        <input type="submit" class="commentbtn" value="Comment">
+                    </form>
+                </div>
+                <div class="comment_sec">
+                    <% if (element.comments.length> 0) { %>
+                        <h3>Comments:</h3>
+                        <% element.comments.forEach(function(comment){ %>
+                            <div class="commentslist">
+
+                                <p>
+                                    <strong>
+                                        <%= comment.user ? comment.user.name : 'Unknown' %>
+                                    </strong> :
+                                    <%= comment.body %>
+                                </p>
+
+                                <button class="delc">
+                                    <a href="/delete/comment/<%=comment._id%>/<%=element._id%>">delete</a>
+                                </button>
+                            </div>
+                            <% }); %>
+                                <% } %>
+
+                </div>
+                <%});%>
+
+</body>
+
+</html>
