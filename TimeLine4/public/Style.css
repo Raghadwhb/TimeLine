@@ -1,0 +1,155 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 10px;
+}
+
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.line {
+    width: 80%;
+    height: 2px;
+    background-color: #ccc;
+    margin: 10px auto 30px auto;
+}
+
+.enter-post {
+    width: 60%;
+    margin: 0 auto 30px auto;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.enter-post input {
+    width: calc(50% - 10px);
+    margin: 5px 5px 5px 0;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.postbtn,
+.commentbtn {
+    padding: 8px 12px;
+    margin-top: 5px;
+    border: none;
+    background-color: #e97b9c;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.postbtn:hover,
+.commentbtn:hover {
+    background-color: #7982d1;
+}
+
+.post-container {
+    width: 60%;
+    background-color: #fff;
+    margin: 0 auto 20px auto;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.del,
+.edt {
+    padding: 5px 8px;
+    margin-right: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.del {
+    background-color: #eb5b50;
+    color: white;
+}
+
+.del:hover {
+    background-color: #d32f2f;
+}
+
+.edt {
+    background-color: #eb68b4;
+    color: white;
+}
+
+.edt:hover {
+    background-color: #acd1f5;
+}
+
+
+.name-date {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+
+.msg {
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+
+
+.commentform {
+    width: 55%;
+    margin: 0 auto 10px auto;
+}
+
+.commentform input.comment-input {
+    width: 70%;
+    padding: 6px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.comment_sec {
+    width: 55%;
+    margin: 0 auto 20px auto;
+}
+
+.commentslist {
+    background-color: #f9f9f9;
+    padding: 8px 12px;
+    margin-bottom: 8px;
+    border-radius: 6px;
+    border-left: 4px solid #2196F3;
+}
+
+.commentslist p {
+    margin: 0;
+}
+
+.delc a {
+    text-decoration: none;
+    color: rgb(199, 106, 106);
+    font-size: 0.85em;
+}
+
+.delc {
+    display: inline-block;
+    margin-top: 5px;
+}
+
+.delc button {
+    padding: 4px 8px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ece1e0;
+    color: rgb(194, 103, 103);
+    cursor: pointer;
+}
+
+.delc button:hover {
+    background-color: #d32f2f;
+}
