@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Article</title>
+    <link rel="stylesheet" href="/Style.css">
+</head>
+
+<body>
+
+    <a href="/homepage">Back</a>
+
+    <h1>
+        <%= article.title %>
+    </h1>
+
+    <p>
+        <%= article.article %>
+    </p>
+
+    <br>
+
+    <a href="/edit/article/<%= article._id %>">Edit</a>
+
+    <a href="/delete/article/<%= article._id %>">Delete</a>
+</body>
+
+</html>

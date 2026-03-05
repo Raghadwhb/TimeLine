@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Article</title>
+    <link rel="stylesheet" href="/Style.css">
+</head>
+
+<body>
+
+    <h1>Edit Article</h1>
+
+    <a href="/homepage">Back</a>
+
+    <form action="/submit-edited-article/<%= article._id %>" method="POST">
+
+        <input type="text" name="title" value="<%= article.title %>">
+
+        <% if(errors && errors.title){ %>
+            <p>
+                <%= errors.title.message %>
+            </p>
+            <% } %>
+
+                <br><br>
+
+                <textarea name="article"><%= article.article %></textarea>
+
+                <% if(errors && errors.article){ %>
+                    <p>
+                        <%= errors.article.message %>
+                    </p>
+                    <% } %>
+
+                        <br><br>
+
+                        <button type="submit">Update</button>
+
+    </form>
+</body>
+
+</html>

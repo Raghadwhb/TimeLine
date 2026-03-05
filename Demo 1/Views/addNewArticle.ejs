@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Article</title>
+    <link rel="stylesheet" href="/Style.css">
+</head>
+
+<body>
+
+    <h1>Add New Article</h1>
+
+    <a href="/homepage">Back</a>
+
+    <form action="/submit-article" method="POST">
+
+        <input type="text" name="title" placeholder="Title" value="<%= data.title || '' %>">
+
+        <% if(errors && errors.title){ %>
+            <p>
+                <%= errors.title.message %>
+            </p>
+            <% } %>
+
+                <br><br>
+
+                <textarea name="article" placeholder="Article Content"><%= data.article || '' %></textarea>
+
+                <% if(errors && errors.article){ %>
+                    <p>
+                        <%= errors.article.message %>
+                    </p>
+                    <% } %>
+
+                        <br><br>
+
+                        <button type="submit">Add Article</button>
+
+    </form>
+</body>
+
+</html>
