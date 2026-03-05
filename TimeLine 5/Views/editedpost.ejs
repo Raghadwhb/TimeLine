@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/Style.css">
+    <title>Edit Post</title>
+</head>
+
+<body>
+
+    <h1>Edit Post</h1>
+    <div class="line"></div>
+
+    <div class="enter-post">
+
+        <% if (typeof error !=='undefined' && error) { %>
+            <h3 style="color:red;">
+                <%= error %>
+            </h3>
+            <% } %>
+
+                <form action="/edit-post/<%=post._id%>" method="POST">
+                    <input name="post" value="<%= post.post %>" type="text" class="post-input">
+                    <input type="submit" class="postbtn" value="Edit">
+                </form>
+
+    </div>
+
+</body>
+
+</html>

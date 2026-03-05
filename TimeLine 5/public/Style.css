@@ -1,0 +1,197 @@
+/* ===================== Body ===================== */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+/* ===================== Header User + Logout ===================== */
+.header-user-logout {
+    width: 90%;
+    margin: 20px auto 10px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-user-logout h2 {
+    margin: 0;
+    font-size: 16px;
+    color: #34495e;
+}
+
+.logoutbtn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 13px;
+    transition: 0.2s;
+}
+
+.logoutbtn:hover {
+    background-color: #c0392b;
+}
+
+/* ===================== Line Divider ===================== */
+.line {
+    width: 90%;
+    height: 2px;
+    background-color: #ccc;
+    margin: 10px auto 20px auto;
+}
+
+/* ===================== SignUp / Login Container ===================== */
+.signlog_container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 30px;
+    gap: 50px;
+}
+
+.signlog_container div {
+    background-color: #fff;
+    padding: 25px 30px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+.signlog_container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+/* ===================== Inputs ===================== */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px 12px;
+    margin: 8px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+/* ===================== Buttons ===================== */
+button,
+input[type="submit"] {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+button:hover,
+input[type="submit"]:hover {
+    background-color: #2980b9;
+}
+
+/* ===================== Post / Comment ===================== */
+.enter-post,
+.commentform {
+    width: 90%;
+    margin: 20px auto;
+    display: flex;
+    gap: 10px;
+}
+
+.post-input,
+.comment-input {
+    flex: 1;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* ===================== Post Container ===================== */
+.post-container {
+    width: 90%;
+    margin: 20px auto;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* ===================== Post Buttons (edit/delete) ===================== */
+.post-buttons {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 5px;
+}
+
+.del,
+.edt,
+.delc {
+    background-color: #e67e22;
+    color: white;
+    border: none;
+    padding: 3px 6px;
+    font-size: 11px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.del:hover,
+.edt:hover,
+.delc:hover {
+    background-color: #d35400;
+}
+
+.name-date {
+    font-size: 12px;
+    color: gray;
+    margin-bottom: 10px;
+}
+
+.msg {
+    font-size: 14px;
+    color: #2c3e50;
+}
+
+/* ===================== Comments Section ===================== */
+.comment_sec {
+    width: 90%;
+    margin: 10px auto 20px auto;
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.commentslist {
+    margin-bottom: 10px;
+}
+
+/* ===================== Comment Buttons ===================== */
+.comment-buttons {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 5px;
+}
+
+/* ===================== Comments Title ===================== */
+.comment_sec h3 {
+    font-size: 14px;
+    color: #2c3e50;
+}
+
+/* ===================== Error Messages ===================== */
+.error-msg h3 {
+    text-align: center;
+    margin-top: 15px;
+}

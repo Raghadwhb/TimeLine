@@ -1,0 +1,30 @@
+{
+  "name": "timeline",
+  "version": "1.0.0",
+  "main": "Server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cookie-parser": "^1.4.7",
+    "ejs": "^4.0.1",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.2.4",
+    "nodemon": "^3.1.14"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Raghadwhb/TimeLine.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/Raghadwhb/TimeLine/issues"
+  },
+  "homepage": "https://github.com/Raghadwhb/TimeLine#readme",
+  "description": ""
+}
