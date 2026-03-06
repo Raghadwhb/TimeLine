@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Post Details</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+    <div class="detail-container">
+        <div class="detail-card">
+            <h3>Post Details:</h3>
+            <h2>
+                <%= post.Name %>
+            </h2>
+
+            <p class="detail-message">
+                <%= post.Message %>
+            </p>
+
+            <div class="detail-bottom">
+
+                <div class="detail-date light-text">
+                    <%= post.createdAt.toLocaleDateString() %>
+                </div>
+
+                <div class="detail-buttons">
+
+                    <a href="/feed/edit/<%= post.id %>">
+                        <button class="btn-primary">Edit</button>
+                    </a>
+
+                    <a href="/feed/delete/<%= post.id %>">
+                        <button class="btn-danger">Delete</button>
+                    </a>
+
+                </div>
+
+            </div>
+
+            <a class="back-link" href="/feed">← Back to Feed</a>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
