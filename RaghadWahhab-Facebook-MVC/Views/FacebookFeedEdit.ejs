@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit page</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+    <div class="edit-overlay">
+        <div class="edit-card">
+
+            <h2>Edit Post</h2>
+
+            <form action="/feed/update/<%= post._id %>" method="POST">
+
+                <label>Name</label>
+                <input type="text" name="Name" value="<%= post.Name %>">
+                <small class="hint">Maximum 15 characters</small>
+                <% if(errors && errors.Name){ %>
+                    <p class="error">
+                        <%= errors.Name.message %>
+                    </p>
+                    <% } %>
+
+                        <label>Message</label>
+                        <textarea name="Message"><%= post.Message %></textarea>
+                        <small class="hint">Maximum 40 characters</small>
+                        <% if(errors && errors.Message){ %>
+                            <p class="error">
+                                <%= errors.Message.message %>
+                            </p>
+                            <% } %>
+
+                                <button class="btn-primary">Update Post</button>
+
+            </form>
+
+            <a class="back-link" href="/feed">← Cancel and Back Home</a>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

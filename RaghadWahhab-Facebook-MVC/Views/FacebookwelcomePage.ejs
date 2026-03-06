@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Facebook</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+    <h1 class="title">Welcome to Facebook</h1>
+    <form class="form-inline" action="/feed/add" method="POST">
+
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" name="Name" placeholder="Your name" value="<%= data ? data.Name : '' %>">
+            <small class="hint">Maximum 15 characters</small>
+            <% if(errors && errors.Name){ %>
+                <p class="error">
+                    <%= errors.Name.message %>
+                </p>
+                <% } %>
+        </div>
+
+        <div class="form-group">
+            <label>Message</label>
+            <textarea name="Message"><%= data ? data.Message : '' %></textarea>
+            <small class="hint">Maximum 40 characters</small>
+            <% if(errors && errors.Message){ %>
+                <p class="error">
+                    <%= errors.Message.message %>
+                </p>
+                <% } %>
+        </div>
+
+        <button class="btn-primary">Add Post</button>
+
+    </form>
+
+    <hr>
+    <div class="posts-inline">
+
+        <% if(feed.length> 0){ %>
+
+            <% feed.forEach(post=>{ %>
+
+                <div class="post-inline">
+
+                    <div class="post-header">
+                        <strong>
+                            <%= post.Name %>
+                        </strong>
+                    </div>
+
+                    <div class="post-message">
+                        <%= post.Message.slice(0,20) %>...
+                    </div>
+
+                    <div class="post-footer">
+                        <span class="post-date">
+                            <%= post.createdAt.toLocaleDateString() %>
+                        </span>
+                        <a class="view-link" href="/feed/<%= post.id %>">View More</a>
+                    </div>
+
+                </div>
+
+                <% }) %>
+
+                    <% }else{ %>
+
+                        <p>No posts yet</p>
+
+                        <% } %>
+
+    </div>
+
+</body>
+
+</html>
