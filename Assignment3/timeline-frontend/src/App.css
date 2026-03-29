@@ -1,0 +1,393 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Syne:wght@700;800&display=swap');
+
+:root {
+  --bg: #f4f2ee;
+  --white: #ffffff;
+  --primary: #1a1a2e;
+  --accent: #4f46e5;
+  --accent-light: #eef2ff;
+  --danger: #ef4444;
+  --danger-light: #fef2f2;
+  --success: #10b981;
+  --text: #1f2937;
+  --text-muted: #6b7280;
+  --border: #e5e7eb;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -1px rgba(0,0,0,0.04);
+  --radius: 12px;
+  --radius-sm: 8px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+/* ===================== Header ===================== */
+.header-user-logout {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--shadow-sm);
+}
+
+.header-user-logout h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: -0.3px;
+}
+
+.logoutbtn {
+  background: var(--danger-light);
+  color: var(--danger);
+  border: 1px solid #fecaca;
+  padding: 6px 14px;
+  cursor: pointer;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: 'DM Sans', sans-serif;
+  transition: all 0.2s;
+  width: auto !important;
+}
+
+.logoutbtn:hover {
+  background: var(--danger);
+  color: white;
+  border-color: var(--danger);
+}
+
+/* ===================== Line ===================== */
+.line {
+  display: none;
+}
+
+/* ===================== Auth Pages ===================== */
+.signlog_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.signlog_container div {
+  background: var(--white);
+  padding: 36px 32px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+  width: 100%;
+  max-width: 360px;
+  border: 1px solid var(--border);
+}
+
+.signlog_container h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: 26px;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 24px;
+  color: var(--primary);
+  letter-spacing: -0.5px;
+}
+
+/* ===================== Inputs ===================== */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+  width: 100%;
+  padding: 10px 14px;
+  margin: 6px 0;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--border);
+  font-size: 14px;
+  font-family: 'DM Sans', sans-serif;
+  color: var(--text);
+  background: #fafafa;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+textarea:focus {
+  border-color: var(--accent);
+  background: var(--white);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.08);
+}
+
+/* ===================== Buttons — reset global ===================== */
+button,
+input[type="submit"] {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  border-radius: var(--radius-sm);
+  transition: all 0.2s;
+  width: 100%;
+  padding: 10px 16px;
+  margin-top: 10px;
+  background: var(--accent);
+  color: white;
+}
+
+button:hover,
+input[type="submit"]:hover {
+  background: #4338ca;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+}
+
+/* ===================== Post Form ===================== */
+.enter-post {
+  width: 90%;
+  max-width: 680px;
+  margin: 24px auto 0 auto;
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 16px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.enter-post form {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  align-items: center;
+}
+
+.post-input {
+  flex: 1;
+  margin: 0 !important;
+  border-radius: 20px !important;
+  padding: 9px 16px !important;
+}
+
+.postbtn {
+  width: auto !important;
+  margin-top: 0 !important;
+  padding: 9px 20px !important;
+  border-radius: 20px !important;
+  font-size: 13px !important;
+  white-space: nowrap;
+}
+
+/* ===================== Post Container ===================== */
+.post-container {
+  width: 90%;
+  max-width: 680px;
+  margin: 16px auto 0 auto;
+  padding: 16px 18px;
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+}
+
+/* ===================== Post Buttons ===================== */
+.post-buttons {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 10px;
+  justify-content: flex-end;
+}
+
+.post-buttons button {
+  width: auto !important;
+  padding: 4px 12px !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  margin-top: 0 !important;
+  border-radius: 20px !important;
+  letter-spacing: 0.3px;
+}
+
+/* Edit button */
+.post-buttons button:first-child {
+  background: var(--accent-light);
+  color: var(--accent);
+}
+
+.post-buttons button:first-child:hover {
+  background: var(--accent);
+  color: white;
+  box-shadow: none;
+  transform: none;
+}
+
+/* Delete button */
+.post-buttons button:last-child {
+  background: var(--danger-light);
+  color: var(--danger);
+}
+
+.post-buttons button:last-child:hover {
+  background: var(--danger);
+  color: white;
+  box-shadow: none;
+  transform: none;
+}
+
+.name-date {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.msg {
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* ===================== Comment Form ===================== */
+.commentform {
+  width: 90%;
+  max-width: 680px;
+  margin: 8px auto 0 auto;
+  display: flex;
+}
+
+.commentform form {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  align-items: center;
+}
+
+.comment-input {
+  flex: 1;
+  margin: 0 !important;
+  border-radius: 20px !important;
+  padding: 7px 14px !important;
+  font-size: 13px !important;
+}
+
+.commentbtn {
+  width: auto !important;
+  margin-top: 0 !important;
+  padding: 7px 16px !important;
+  border-radius: 20px !important;
+  font-size: 12px !important;
+  white-space: nowrap;
+}
+
+/* ===================== Comments Section ===================== */
+.comment_sec {
+  width: 90%;
+  max-width: 680px;
+  margin: 6px auto 16px auto;
+  background: #f9fafb;
+  padding: 12px 14px;
+  border-radius: 0 0 var(--radius) var(--radius);
+  border: 1px solid var(--border);
+  border-top: none;
+}
+
+.comment_sec h3 {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.commentslist {
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+.commentslist:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.commentslist p {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+/* ===================== Comment Delete Button ===================== */
+.comment-buttons {
+  margin-top: 5px;
+}
+
+.comment-buttons button {
+  width: auto !important;
+  padding: 2px 10px !important;
+  font-size: 10px !important;
+  margin-top: 0 !important;
+  border-radius: 20px !important;
+  background: var(--danger-light) !important;
+  color: var(--danger) !important;
+  font-weight: 600 !important;
+}
+
+.comment-buttons button:hover {
+  background: var(--danger) !important;
+  color: white !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+/* ===================== Error ===================== */
+.error-msg {
+  width: 90%;
+  max-width: 680px;
+  margin: 12px auto;
+  background: var(--danger-light);
+  border: 1px solid #fecaca;
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+}
+
+.error-msg h3 {
+  font-size: 13px;
+  color: var(--danger);
+  font-weight: 500;
+  text-align: center;
+  margin: 0;
+}
+
+/* ===================== Auth Links ===================== */
+.signlog_container p {
+  text-align: center;
+  margin-top: 16px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.signlog_container p a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.signlog_container p a:hover {
+  text-decoration: underline;
+}
